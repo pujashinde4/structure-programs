@@ -1,0 +1,40 @@
+//program-sports ...structure...using functions
+#include<stdio.h>
+struct sport
+{
+    char sport_name[10];
+    char scoring_sys[20];
+    int No_players;
+    char type[5];
+    char category[10];
+};
+struct sport getdetails();
+void display(struct sport s[3]);
+struct sport getdetails()
+{
+    struct sport p;
+    printf("enter the details of sport as name,type,number of player,scoring system,and category:");
+    scanf("%s",p.sport_name);
+    scanf("%s",p.scoring_sys);
+    scanf("%d",&p.No_players);
+    scanf("%s",p.type);
+    scanf("%s",p.category);
+    return p;
+}
+void display(struct sport s[3])
+{
+    int i;
+    for(i=0;i<3;i++)
+    {
+        printf("sport_name:%s,scoring_sys:%s,No_players:%d,type:%s,category:%s\n",s[i].sport_name,s[i].scoring_sys,s[i].No_players,s[i].type,s[i].category);
+    }
+}
+int main()
+{
+    int i;
+    struct sport s[3];
+    for(i=0;i<3;i++)
+    {
+        s[i]=getdetails();
+    }
+    display(s);
