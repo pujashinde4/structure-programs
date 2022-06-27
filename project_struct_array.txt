@@ -1,0 +1,47 @@
+//program-project 5 to hold information
+#include<stdio.h>
+struct project
+{
+    int pro_code;
+    char pro_name[15];
+    char pro_incharge[20];
+    char start_date[10];
+    char end_date[10];
+    char cust_name[20];
+};
+struct project getdetails();
+void display(struct project p[5]);
+struct project getdetails()
+{
+    struct project proj;
+    printf("enter the details of project as code,name,incharge,start date,end date,cust_name:");
+    scanf("%d",&proj.pro_code);
+    scanf("%s",proj.pro_name);
+    scanf("%s",proj.pro_incharge);
+    scanf("%s",proj.start_date);
+    scanf("%s",proj.end_date);
+    scanf("%s",proj.cust_name);
+    return proj;
+}
+void display(struct project p[5])
+{
+    int i;
+    printf("Details of project are:\n");
+    for(i=0;i<5;i++)
+    {
+        printf("pro_code:%d,pro_name:%s,pro_incharge:%s,start_date:%s,end_date:%s,cust_name:%s\n",p[i].pro_code,p[i].pro_name,p[i].pro_incharge,p[i].start_date,p[i].end_date,p[i].cust_name);
+    }
+}
+ int main()
+ {
+     int i;
+     struct project p[5];
+     for(i=0;i<5;i++)
+     {
+         p[i]=getdetails();
+     }
+     display(p);
+    return 0; 
+ }
+
+

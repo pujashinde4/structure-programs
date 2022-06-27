@@ -1,0 +1,74 @@
+//program-use of calloc -structure mobile
+#include <stdio.h>
+#include<stdlib.h>
+struct mobile
+{
+    char brand[10];
+    char model[5];
+    float price;
+    char color[7];
+};
+int main()
+{
+    int i,n;
+    struct mobile *ptr;
+    printf("enter the value of n");
+    scanf("%d",&n);
+    ptr=(struct mobile*)calloc(ptr,sizeof(struct mobile));
+    if(ptr==NULL)
+    {
+        scanf("\nsorrry..........memory not allocated");
+        
+    }
+   // printf("enter the details of mobile as brand,model,price,color resp.:");
+    for(i=0;i<n;++i)
+    {
+        printf("\nenter the details of mobile as brand,model,price,color resp.:");
+        scanf("%s",(ptr+i)->brand);
+        scanf("%s",(ptr+i)->model);
+        scanf("%f",&(ptr+i)->price);
+        scanf("%s",(ptr+i)->color);
+    }
+   printf("\ndetails of mobile are:");
+   for(i=0;i<n;i++)
+   {
+       printf("BRAND:%s,MODEL:%s,price:%f,color:%s\n",(ptr+i)->brand,(ptr+i)->model,(ptr+i)->price,(ptr+i)->color);
+   }
+    free(ptr);
+}
+**************************OUTPUT*****************************
+enter the value of n5
+
+enter the details of mobile as brand,model,price,color resp.:hp
+hp
+30000
+black
+
+enter the details of mobile as brand,model,price,color resp.:dell
+dell
+35000
+white
+
+enter the details of mobile as brand,model,price,color resp.:hp
+hp
+37000
+black
+
+enter the details of mobile as brand,model,price,color resp.:apple
+apple
+34000
+white
+
+enter the details of mobile as brand,model,price,color resp.:linvo
+linvo
+4000
+red
+
+details of mobile are:BRAND:hp,MODEL:hp,price:30000.000000,color:black
+BRAND:dell,MODEL:dell,price:35000.000000,color:white
+BRAND:hp,MODEL:hp,price:37000.000000,color:black
+BRAND:apple,MODEL:apple,price:34000.000000,color:white
+BRAND:linvo,MODEL:linvo,price:4000.000000,color:red
+
+
+

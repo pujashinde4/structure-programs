@@ -1,0 +1,42 @@
+//structure data type
+#include<stdio.h>
+#include<stdlib.h>
+struct address
+{
+    char doorno[5];
+    char street[15];
+    char city[15];
+    int pincode;
+    };
+struct employee
+{
+    int emp_id;
+    char emp_name[30];
+    char designation[10];
+    int mobile;
+    float salary;
+    struct address emp_add;
+};
+int main()
+{
+    int size1,size2;
+    struct employee emp1={27901,"puja","developer",1234567890,35000,"A 37","AAA","pune",02550};
+    printf("\nemployee details:\n");
+    printf("employee id:%d,employee_name:%s,designation:%s,mobile_no:%d,salary:%f,doorno:%s,street:%s,city:%s,pincode:%d\n",emp1.emp_id,emp1.emp_name,emp1.designation,emp1.mobile,emp1.salary,emp1.emp_add.doorno,emp1.emp_add.street,emp1.emp_add.city,emp1.emp_add.pincode);
+    struct employee emp2;
+    printf("enter the details of employee2:\n");
+    scanf("%d",&emp2.emp_id);
+    scanf("%s",emp2.emp_name);
+    scanf("%s",emp2.designation);
+    scanf("%d",&emp2.mobile);
+    scanf("%f",&emp2.salary);
+    scanf("%s",emp2.emp_add.doorno);
+    scanf("%s",emp2.emp_add.street);
+    scanf("%s",emp2.emp_add.city);
+    scanf("%d",emp2.emp_add.pincode);
+    printf("employee id:%d,employee_name:%s,designation:%s,mobile_no:%d,salary:%f,doorno:%s,street:%s,city:%s,pincode:%d\n",emp2.emp_id,emp2.emp_name,emp2.designation,emp2.mobile,emp2.salary,emp2.emp_add.doorno,emp2.emp_add.street,emp2.emp_add.city,emp2.emp_add.pincode);
+   printf("size of address is:%d",sizeof(&emp1));
+   printf("size of address is:%d",sizeof(struct employee));
+   printf("size of address is:%d",sizeof(struct address));
+   //printf("size of address is:%d",sizeof(struct employee));
+   }

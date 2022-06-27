@@ -1,0 +1,28 @@
+#include<stdio.h>
+struct car
+{
+char brand[5];
+char model[10];
+float price;
+char review[2];
+};
+int main()
+{
+int i;
+struct car c[4];
+for(i=0;i<4;i++)
+{
+printf("enter the details of car as brand, model price,review %d\n",i+1);
+scanf("%s",c[i].brand);
+scanf("%s",c[i].model);
+scanf("%f",&c[i].price);
+scanf("%s",c[i].review);
+}
+//display details
+for(i=0;i<4;i++)
+{
+printf("car details is:");
+printf("BRAND IS:%s,MODEL:%s,price:%f,review:%s",c[i].brand,c[i].model,c[i].price,c[i].review);
+return 0;
+}
+}

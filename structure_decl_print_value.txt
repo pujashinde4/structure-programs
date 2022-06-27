@@ -1,0 +1,25 @@
+//structure data type
+#include<stdio.h>
+struct employee
+{
+    int emp_id;
+    char emp_name[30];
+    char designation[10];
+    int mobile;
+    float salary;
+};
+int main()
+{
+    struct employee emp1={27901,"puja","developer",1234567890,35000};
+    printf("\nemployee details:\n");
+    printf("employee id:%d,employee_name:%s,designation:%s,mobile_no:%d,salary:%f\n",emp1.emp_id,emp1.emp_name,emp1.designation,emp1.mobile,emp1.salary);
+     struct employee emp2;
+    printf("enter the details of employee2:\n");
+    scanf("%d",&emp2.emp_id);
+    scanf("%s",emp2.emp_name);
+    scanf("%s",emp2.designation);
+    scanf("%d",&emp2.mobile);
+    scanf("%f",&emp2.salary);
+     printf("employee id:%d,employee_name:%s,designation:%s,mobile_no:%d,salary:%f",emp2.emp_id,emp2.emp_name,emp2.designation,emp2.mobile,emp2.salary);
+
+}
